@@ -1,6 +1,6 @@
 package me.mfathy.movies.rater
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 class MoviesActivity : AppCompatActivity() {
