@@ -1,0 +1,49 @@
+ext {
+
+    //Android
+    androidBuildToolsVersion = "28.0.3"
+    androidMinSdkVersion = 21
+    androidTargetSdkVersion = 28
+    androidCompileSdkVersion = 28
+    kotlinVersion = '1.3.11'
+
+    //Libraries
+    androidXVersion = '1.1.0-alpha01'
+    androidXViewsVersion = '1.0.0'
+    constraintlayoutVersion = '2.0.0-alpha2'
+    rxJavaVersion = '2.0.2'
+    rxKotlinVersion = '2.1.0'
+    rxAndroidVersion = '2.1.0'
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+    androidAnnotationsVersion = '21.0.3'
+    daggerVersion = '2.16'
+    glideVersion = '4.8.0'
+    glassfishAnnotationVersion = '10.0-b28'
+    lifecycle_version = '2.0.0'
+    roomVersion = '2.1.0-alpha03'
+
+    //Testing
+    jUnitVersion = '4.12'
+    assertJVersion = '3.8.0'
+    mockitoKotlinVersion = '1.5.0'
+    espressoVersion = '3.1.1-beta01'
+    robolectricVersion = '3.4.2'
+    mockitoVersion = '1.9.5'
+    mockitoAndroidVersion = '2.8.9'
+    dexmakerMockitoversion = '2.2.0'
+    runnerVersion = '1.1.1-alpha01'
+    JunitExtVersion = '1.0.0'
+
+    domainDependencies = [
+            javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
+            rxJava:             "io.reactivex.rxjava2:rxkotlin:${rxJavaVersion}"
+    ]
+
+    domainTestDependencies = [
+            junit:              "junit:junit:${jUnitVersion}",
+            mockito:            "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}",
+            assertj:            "org.assertj:assertj-core:${assertJVersion}"
+    ]
+}
