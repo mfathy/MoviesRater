@@ -20,8 +20,9 @@ ext {
     daggerVersion = '2.16'
     glideVersion = '4.8.0'
     glassfishAnnotationVersion = '10.0-b28'
-    lifecycle_version = '2.0.0'
+    lifecycleVersion = '2.0.0'
     roomVersion = '2.1.0-alpha03'
+    gsonVersion = '2.8.1'
 
     //Testing
     jUnitVersion = '4.12'
@@ -34,6 +35,8 @@ ext {
     dexmakerMockitoversion = '2.2.0'
     runnerVersion = '1.1.1-alpha01'
     JunitExtVersion = '1.0.0'
+    testCoreVersion = "1.1.0-beta01"
+    annotationVersion = "1.0.0"
 
     domainDependencies = [
             javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
@@ -45,5 +48,33 @@ ext {
             junit:              "junit:junit:${jUnitVersion}",
             mockito:            "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}",
             assertj:            "org.assertj:assertj-core:${assertJVersion}"
+    ]
+
+
+    dataDependencies = [
+            daggerCompiler:     "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger:             "com.google.dagger:dagger:${daggerVersion}",
+            gson:               "com.google.code.gson:gson:${gsonVersion}",
+            rxKotlin:           "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            kotlin:             "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}",
+            javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
+            roomRuntime:        "androidx.room:room-runtime:${roomVersion}",
+            roomCompiler:       "androidx.room:room-compiler:${roomVersion}",
+            roomRxJava:         "androidx.room:room-rxjava2:${roomVersion}"
+    ]
+
+    dataTestDependencies = [
+            junit:              "junit:junit:${jUnitVersion}",
+            kotlinJUnit:        "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}",
+            robolectric:        "org.robolectric:robolectric:${robolectricVersion}",
+            assertj:            "org.assertj:assertj-core:${assertJVersion}",
+            mockito:            "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}",
+            roomTesting:        "androidx.room:room-testing:${roomVersion}",
+            archTesting:        "androidx.arch.core:core-testing:${lifecycleVersion}",
+            annotationTesting:  "androidx.annotation:annotation:${annotationVersion}",
+            supportRunner:      "androidx.test:runner:${runnerVersion}",
+            supportRules:       "androidx.test:rules:${runnerVersion}",
+            testCore:           "androidx.test:core:${testCoreVersion}"
     ]
 }

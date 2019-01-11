@@ -1,11 +1,10 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 
-apply plugin: 'kotlin-android-extensions'
+def globalConfiguration = rootProject.extensions.getByName("ext")
 
 android {
-    def globalConfiguration = rootProject.extensions.getByName("ext")
 
     compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
     buildToolsVersion globalConfiguration["androidBuildToolsVersion"]
@@ -22,6 +21,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceCompatibility = "1.7"
+    targetCompatibility = "1.7"
 }
 
 dependencies {
