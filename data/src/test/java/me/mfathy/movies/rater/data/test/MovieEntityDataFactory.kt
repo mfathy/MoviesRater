@@ -2,6 +2,7 @@ package me.mfathy.movies.rater.data.test
 
 import me.mfathy.movies.rater.data.model.MovieEntity
 import me.mfathy.movies.rater.data.store.cache.model.CachedMovie
+import me.mfathy.movies.rater.data.store.remote.model.RemoteMovie
 import me.mfathy.movies.rater.data.test.DataEntityFactory.randomDouble
 import me.mfathy.movies.rater.data.test.DataEntityFactory.randomString
 import me.mfathy.movies.rater.domain.model.Movie
@@ -36,6 +37,14 @@ object MovieEntityDataFactory {
         randomDouble()
     )
 
+    fun makeRemoteMovie(): RemoteMovie = RemoteMovie(
+        randomString(),
+        randomString(),
+        randomString(),
+        randomString(),
+        randomDouble()
+    )
+
     fun makeMovieList(count: Int): MutableList<Movie> {
         val movies = mutableListOf<Movie>()
         repeat(count) {
@@ -51,5 +60,4 @@ object MovieEntityDataFactory {
         }
         return movies
     }
-
 }
