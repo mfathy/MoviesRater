@@ -1,4 +1,4 @@
-package me.mfathy.movies.rater.data.mapper
+package me.mfathy.movies.rater.data.mapper.data
 
 import me.mfathy.movies.rater.data.model.MovieEntity
 import me.mfathy.movies.rater.data.test.MovieEntityDataFactory

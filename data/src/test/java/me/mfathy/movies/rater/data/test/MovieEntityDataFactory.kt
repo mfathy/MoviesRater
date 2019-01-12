@@ -1,6 +1,7 @@
 package me.mfathy.movies.rater.data.test
 
 import me.mfathy.movies.rater.data.model.MovieEntity
+import me.mfathy.movies.rater.data.store.cache.model.CachedMovie
 import me.mfathy.movies.rater.data.test.DataEntityFactory.randomDouble
 import me.mfathy.movies.rater.data.test.DataEntityFactory.randomString
 import me.mfathy.movies.rater.domain.model.Movie
@@ -20,6 +21,14 @@ object MovieEntityDataFactory {
     )
 
     fun makeMovie(): Movie = Movie(
+        randomString(),
+        randomString(),
+        randomString(),
+        randomString(),
+        randomDouble()
+    )
+
+    fun makeCachedMovie(): CachedMovie = CachedMovie(
         randomString(),
         randomString(),
         randomString(),
