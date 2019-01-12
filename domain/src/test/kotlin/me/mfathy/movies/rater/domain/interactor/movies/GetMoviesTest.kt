@@ -4,7 +4,7 @@ import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Flowable
 import me.mfathy.movies.rater.domain.executor.ExecutionThread
-import me.mfathy.movies.rater.domain.model.MovieEntity
+import me.mfathy.movies.rater.domain.model.Movie
 import me.mfathy.movies.rater.domain.repository.MoviesRepository
 import me.mfathy.movies.rater.domain.test.MovieDataFactory.makeMovieEntityList
 import org.junit.Before
@@ -47,7 +47,7 @@ class GetMoviesTest {
         verify(mockRepository).getMovies()
     }
 
-    private fun stubMoviesRepositoryGetMovies(observable: Flowable<MutableList<MovieEntity>>) {
+    private fun stubMoviesRepositoryGetMovies(observable: Flowable<MutableList<Movie>>) {
         whenever(mockRepository.getMovies()).thenReturn(observable)
     }
 }

@@ -1,6 +1,6 @@
 package me.mfathy.movies.rater.domain.test
 
-import me.mfathy.movies.rater.domain.model.MovieEntity
+import me.mfathy.movies.rater.domain.model.Movie
 import me.mfathy.movies.rater.domain.test.DataFactory.randomDouble
 import me.mfathy.movies.rater.domain.test.DataFactory.randomString
 
@@ -10,7 +10,7 @@ import me.mfathy.movies.rater.domain.test.DataFactory.randomString
  */
 object MovieDataFactory {
 
-    fun makeMovieEntity(): MovieEntity = MovieEntity(
+    private fun makeMovie(): Movie = Movie(
         randomString(),
         randomString(),
         randomString(),
@@ -18,10 +18,10 @@ object MovieDataFactory {
         randomDouble()
     )
 
-    fun makeMovieEntityList(count: Int): MutableList<MovieEntity> {
-        val movies = mutableListOf<MovieEntity>()
+    fun makeMovieEntityList(count: Int): MutableList<Movie> {
+        val movies = mutableListOf<Movie>()
         repeat(count) {
-            movies.add(makeMovieEntity())
+            movies.add(makeMovie())
         }
         return movies
     }

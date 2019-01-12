@@ -3,7 +3,7 @@ package me.mfathy.movies.rater.domain.interactor.movies
 import io.reactivex.Flowable
 import me.mfathy.movies.rater.domain.executor.ExecutionThread
 import me.mfathy.movies.rater.domain.interactor.base.FlowableUseCase
-import me.mfathy.movies.rater.domain.model.MovieEntity
+import me.mfathy.movies.rater.domain.model.Movie
 import me.mfathy.movies.rater.domain.repository.MoviesRepository
 import javax.inject.Inject
 
@@ -15,8 +15,8 @@ open class GetMovies @Inject constructor(
     private val dataRepository: MoviesRepository,
     subscriberThread: ExecutionThread,
     postExecutionThread: ExecutionThread
-) : FlowableUseCase<MutableList<MovieEntity>>(subscriberThread, postExecutionThread) {
-    public override fun buildUseCaseObservable(): Flowable<MutableList<MovieEntity>> {
+) : FlowableUseCase<MutableList<Movie>>(subscriberThread, postExecutionThread) {
+    public override fun buildUseCaseObservable(): Flowable<MutableList<Movie>> {
         return dataRepository.getMovies()
     }
 }
