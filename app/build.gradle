@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 def globalConfiguration = rootProject.extensions.getByName("ext")
 def appDependencies = rootProject.ext.appDependencies
@@ -29,6 +30,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':domain')
+    implementation project(':data')
 
     // Kotlin
     implementation appDependencies.kotlin

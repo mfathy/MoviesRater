@@ -9,7 +9,7 @@ import me.mfathy.movies.rater.data.store.cache.model.CachedMovie
 /**
  * MoviesDatabase: the room database initializer.
  */
-@Database(entities = [CachedMovie::class], version = 1, exportSchema = true)
+@Database(entities = [CachedMovie::class], version = 1, exportSchema = false)
 abstract class MoviesDatabase : RoomDatabase() {
 
     abstract fun moviesDao(): MoviesDao
