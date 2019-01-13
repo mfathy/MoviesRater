@@ -37,6 +37,8 @@ ext {
     JunitExtVersion = '1.0.0'
     testCoreVersion = "1.1.0-beta01"
     annotationVersion = "1.0.0"
+    coreVersion = "1.1.0-beta01"
+    mockitoAndroidVersion = '2.8.9'
 
     domainDependencies = [
             javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
@@ -79,5 +81,50 @@ ext {
             supportRunner    : "androidx.test:runner:${runnerVersion}",
             supportRules     : "androidx.test:rules:${runnerVersion}",
             testCore         : "androidx.test:core:${testCoreVersion}"
+    ]
+
+    appDependencies = [
+            kotlin              : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}",
+            vectordrwable       : "androidx.vectordrawable:vectordrawable-animated:${androidXViewsVersion}",
+            constraintlayout    : "androidx.constraintlayout:constraintlayout:${constraintlayoutVersion}",
+            recyclerView        : "androidx.recyclerview:recyclerview:${androidXViewsVersion}",
+            material            : "com.google.android.material:material:${androidXVersion}",
+            cardView            : "androidx.cardview:cardview:${androidXViewsVersion}",
+            appcompat           : "androidx.appcompat:appcompat:${androidXVersion}",
+            dagger              : "com.google.dagger:dagger:${daggerVersion}",
+            daggerAndroidSupport: "com.google.dagger:dagger-android-support:${daggerVersion}",
+            daggerAndroid       : "com.google.dagger:dagger-android:${daggerVersion}",
+            daggerCompiler      : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            daggerProcessor     : "com.google.dagger:dagger-android-processor:${daggerVersion}",
+            rxKotlin            : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            rxAndroid           : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            lifeCycleExtension  : "androidx.lifecycle:lifecycle-extensions:${lifecycleVersion}",
+            lifeCycleRuntime    : "androidx.lifecycle:lifecycle-runtime:${lifecycleVersion}",
+            lifeCycleCompiler   : "androidx.lifecycle:lifecycle-compiler:${lifecycleVersion}",
+            glide               : "com.github.bumptech.glide:glide:${glideVersion}",
+            glideCompiler       : "com.github.bumptech.glide:compiler:${glideVersion}",
+            glassfishAnnotation : "org.glassfish:javax.annotation:${glassfishAnnotationVersion}",
+            roomRuntime         : "android.arch.persistence.room:runtime:${roomVersion}",
+            roomCompiler        : "android.arch.persistence.room:compiler:${roomVersion}",
+            roomRxJava          : "android.arch.persistence.room:rxjava2:${roomVersion}"
+    ]
+    appTestDependencies = [
+            junit          : "junit:junit:${jUnitVersion}",
+            kotlinJUnit    : "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}",
+            assertj        : "org.assertj:assertj-core:${assertJVersion}",
+            mockito        : "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}",
+            robolectric      : "org.robolectric:robolectric:${robolectricVersion}",
+            espressoIdling : "androidx.test.espresso.idling:idling-concurrent:${espressoVersion}",
+            espressoIntents: "androidx.test.espresso:espresso-intents:${espressoVersion}",
+            espressoContrib: "androidx.test.espresso:espresso-contrib:${espressoVersion}",
+            espressoCore   : "androidx.test.espresso:espresso-core:${espressoVersion}",
+            androidXJunit  : "androidx.test.ext:junit:${JunitExtVersion}",
+            runner         : "androidx.test:runner:${runnerVersion}",
+            rules          : "androidx.test:rules:${runnerVersion}",
+            testCore       : "androidx.test:core:${coreVersion}",
+            archCoreTesting: "androidx.arch.core:core-testing:${lifecycleVersion}",
+            roomtesting    : "androidx.room:room-testing:${roomVersion}",
+            mockitoAndroidVersion: "org.mockito:mockito-android:${mockitoAndroidVersion}"
+
     ]
 }
