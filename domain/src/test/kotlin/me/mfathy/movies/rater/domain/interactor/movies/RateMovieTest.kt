@@ -6,7 +6,7 @@ import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Completable
 import me.mfathy.movies.rater.domain.executor.ExecutionThread
 import me.mfathy.movies.rater.domain.repository.MoviesRepository
-import me.mfathy.movies.rater.domain.test.DataFactory
+import me.mfathy.movies.rater.domain.test.MovieDataFactory
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -34,8 +34,9 @@ class RateMovieTest {
 
     @Test
     fun testRateMovieCompletes() {
+        val movie = MovieDataFactory.makeMovie()
         stubMoviesRepositoryRateMovie(Completable.complete())
-        val params = RateMovie.Params.forRateMovie(DataFactory.randomString(), DataFactory.randomDouble())
+        val params = RateMovie.Params.forRateMovie(movie)
         val testSubscriber = mRateMovie.buildUseCaseCompletable(params).test()
         testSubscriber.assertComplete()
     }
@@ -47,14 +48,15 @@ class RateMovieTest {
 
     @Test
     fun testGetMoviesCallRepository() {
+        val movie = MovieDataFactory.makeMovie()
         stubMoviesRepositoryRateMovie(Completable.complete())
-        val params = RateMovie.Params.forRateMovie(DataFactory.randomString(), DataFactory.randomDouble())
+        val params = RateMovie.Params.forRateMovie(movie)
         mRateMovie.buildUseCaseCompletable(params).test()
 
-        verify(mockRepository).rateMovie(any(), any())
+        verify(mockRepository).rateMovie(any())
     }
 
     private fun stubMoviesRepositoryRateMovie(complete: Completable?) {
-        whenever(mockRepository.rateMovie(any(), any())).thenReturn(complete)
+        whenever(mockRepository.rateMovie(any())).thenReturn(complete)
     }
 }

@@ -3,6 +3,7 @@ package me.mfathy.movies.rater.domain.interactor.movies
 import io.reactivex.Completable
 import me.mfathy.movies.rater.domain.executor.ExecutionThread
 import me.mfathy.movies.rater.domain.interactor.base.CompletableUseCase
+import me.mfathy.movies.rater.domain.model.Movie
 import me.mfathy.movies.rater.domain.repository.MoviesRepository
 import javax.inject.Inject
 
@@ -19,16 +20,13 @@ open class RateMovie @Inject constructor(
 ) : CompletableUseCase<RateMovie.Params>(subscriberThread, postExecutionThread) {
     public override fun buildUseCaseCompletable(params: Params?): Completable {
         if (params == null) throw IllegalArgumentException("Params can't be null!")
-        return dataRepository.rateMovie(params.movieId, params.rating)
+        return dataRepository.rateMovie(movie = params.movie)
     }
 
 
-    class Params constructor(
-        val movieId: String,
-        val rating: Double
-    ) {
+    class Params constructor(val movie: Movie) {
         companion object {
-            fun forRateMovie(movieId: String, rating: Double): Params = Params(movieId, rating)
+            fun forRateMovie(movie: Movie): Params = Params(movie)
         }
     }
 }

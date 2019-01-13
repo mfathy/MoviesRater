@@ -10,7 +10,7 @@ import me.mfathy.movies.rater.domain.test.DataFactory.randomString
  */
 object MovieDataFactory {
 
-    private fun makeMovie(): Movie = Movie(
+    fun makeMovie(): Movie = Movie(
         randomString(),
         randomString(),
         randomString(),

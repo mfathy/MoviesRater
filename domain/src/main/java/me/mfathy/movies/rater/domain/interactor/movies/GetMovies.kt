@@ -16,7 +16,9 @@ open class GetMovies @Inject constructor(
     subscriberThread: ExecutionThread,
     postExecutionThread: ExecutionThread
 ) : FlowableUseCase<MutableList<Movie>>(subscriberThread, postExecutionThread) {
+
     public override fun buildUseCaseObservable(): Flowable<MutableList<Movie>> {
         return dataRepository.getMovies()
     }
+
 }

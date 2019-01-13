@@ -21,10 +21,9 @@ interface MoviesRepository {
 
     /**
      * Rates a movie.
-     * @param movieId the id of the movie to be rated.
-     * @param rating value of the rating of the specified movie.
+     * @param movie the movie to be rated.
      * @return Completable observable indicates success of failure.
      */
-    fun rateMovie(movieId: String, rating: Double): Completable
+    fun rateMovie(movie: Movie): Completable
 
 }
