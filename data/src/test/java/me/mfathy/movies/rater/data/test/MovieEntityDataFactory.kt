@@ -41,8 +41,8 @@ object MovieEntityDataFactory {
         randomString(),
         randomString(),
         randomString(),
-        randomString(),
-        randomDouble()
+        randomDouble(),
+        randomString()
     )
 
     fun makeMovieList(count: Int): MutableList<Movie> {

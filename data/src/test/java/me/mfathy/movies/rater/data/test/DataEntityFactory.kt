@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadLocalRandom
  */
 object DataEntityFactory {
     fun randomDouble(): Double {
-        return ThreadLocalRandom.current().nextDouble(0.0, 5.0)
+        return ThreadLocalRandom.current().nextDouble(0.0, 10.0)
     }
 
     fun randomString(): String {
