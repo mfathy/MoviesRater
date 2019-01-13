@@ -1,10 +1,12 @@
 package me.mfathy.movies.rater.data.mapper.cache
 
+import me.mfathy.movies.rater.data.mapper.base.CacheEntityMapper
 import me.mfathy.movies.rater.data.model.MovieEntity
 import me.mfathy.movies.rater.data.store.cache.model.CachedMovie
 import javax.inject.Inject
 
-class CacheEntityMapperImpl @Inject constructor() : CacheEntityMapper<MovieEntity, CachedMovie> {
+class CacheEntityMapperImpl @Inject constructor() :
+    CacheEntityMapper<MovieEntity, CachedMovie> {
     override fun mapFromEntity(entity: MovieEntity): CachedMovie = CachedMovie(
         id = entity.id,
         rating = entity.rating,

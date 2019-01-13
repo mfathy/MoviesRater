@@ -1,6 +1,4 @@
-package me.mfathy.movies.rater.data.mapper.cache
-
-import me.mfathy.movies.rater.data.mapper.EntityMapper
+package me.mfathy.movies.rater.data.mapper.base
 
 /**
  * Created by Mohammed Fathy on 12/01/2019.

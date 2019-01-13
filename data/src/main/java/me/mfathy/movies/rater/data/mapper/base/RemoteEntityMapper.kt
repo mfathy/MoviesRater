@@ -1,6 +1,4 @@
-package me.mfathy.movies.rater.data.mapper.remote
-
-import me.mfathy.movies.rater.data.mapper.EntityMapper
+package me.mfathy.movies.rater.data.mapper.base
 
 
 /**

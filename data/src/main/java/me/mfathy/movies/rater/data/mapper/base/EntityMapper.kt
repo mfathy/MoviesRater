@@ -1,4 +1,4 @@
-package me.mfathy.movies.rater.data.mapper
+package me.mfathy.movies.rater.data.mapper.base
 
 
 /**
