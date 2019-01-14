@@ -1,7 +1,6 @@
 package me.mfathy.movies.rater.data.store.cache
 
 import androidx.room.*
-import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Single
 import me.mfathy.movies.rater.data.store.cache.model.CachedMovie
@@ -12,19 +11,15 @@ import me.mfathy.movies.rater.data.store.cache.model.CachedMovie
  */
 @Dao
 abstract class MoviesDao {
-    @Query("SELECT * FROM movies")
-    @JvmSuppressWildcards
+    @Query("SELECT * FROM CachedMovies ORDER BY movie_rating DESC")
     abstract fun getCachedMovies(): Flowable<List<CachedMovie>>
 
-    @Query("SELECT COUNT(*) FROM movies")
-    @JvmSuppressWildcards
+    @Query("SELECT COUNT(*) FROM CachedMovies")
     abstract fun getCachedMoviesCount(): Single<Int>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    @JvmSuppressWildcards
-    abstract fun saveMovieList(cachedMovies: List<CachedMovie>): Completable
+    abstract fun saveMovieList(cachedMovies: List<CachedMovie>)
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    @JvmSuppressWildcards
-    abstract fun updateMovieRate(cachedMovie: CachedMovie): Completable
+    abstract fun updateMovieRate(cachedMovie: CachedMovie)
 }

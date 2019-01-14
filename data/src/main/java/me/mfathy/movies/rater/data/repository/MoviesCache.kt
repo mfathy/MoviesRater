@@ -9,8 +9,8 @@ import me.mfathy.movies.rater.data.model.MovieEntity
  * Created by Mohammed Fathy on 11/01/2019.
  * dev.mfathy@gmail.com
  *
+ * MoviesCache store contract
  */
-
 interface MoviesCache {
 
     /**

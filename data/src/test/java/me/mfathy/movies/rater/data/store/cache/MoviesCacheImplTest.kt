@@ -58,7 +58,7 @@ class MoviesCacheImplTest {
 
     @Test
     fun testGetMoviesReturnsData() {
-        val entities = MovieEntityDataFactory.makeMovieEntityList(3)
+        val entities = MovieEntityDataFactory.makeMovieEntityList(1)
         store.saveMovies(entities).test()
 
 

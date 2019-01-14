@@ -34,17 +34,9 @@ class MoviesDaoTest {
     }
 
     @Test
-    fun testSaveMovieCompletes() {
-        val cachedMovie = MovieEntityDataFactory.makeCachedMovie()
-        val testObserver = database.moviesDao().saveMovieList(listOf(cachedMovie)).test()
-
-        testObserver.assertComplete()
-    }
-
-    @Test
     fun testGetCachedMoviesReturnsData() {
         val cachedMovie = MovieEntityDataFactory.makeCachedMovie()
-        database.moviesDao().saveMovieList(listOf(cachedMovie)).test()
+        database.moviesDao().saveMovieList(listOf(cachedMovie))
 
         val testObserver = database.moviesDao().getCachedMovies().test()
         testObserver.assertValue(listOf(cachedMovie))
@@ -53,7 +45,7 @@ class MoviesDaoTest {
     @Test
     fun testGetCachedMoviesCountReturnsCount() {
         val cachedMovie = MovieEntityDataFactory.makeCachedMovie()
-        database.moviesDao().saveMovieList(listOf(cachedMovie)).test()
+        database.moviesDao().saveMovieList(listOf(cachedMovie))
 
         val testObserver = database.moviesDao().getCachedMoviesCount().test()
         testObserver.assertValue(1)
@@ -62,11 +54,11 @@ class MoviesDaoTest {
     @Test
     fun testUpdateMovieRateUpdatesRating() {
         val cachedMovie = MovieEntityDataFactory.makeCachedMovie()
-        database.moviesDao().saveMovieList(listOf(cachedMovie)).test()
+        database.moviesDao().saveMovieList(listOf(cachedMovie))
 
         val updatedMovie = cachedMovie.copy(rating = 9.3)
 
-        database.moviesDao().updateMovieRate(updatedMovie).test()
+        database.moviesDao().updateMovieRate(updatedMovie)
 
         val testObserver = database.moviesDao().getCachedMovies().test()
         testObserver.assertValue(listOf(updatedMovie))
