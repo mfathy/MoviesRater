@@ -29,7 +29,7 @@ class RateMovieTest {
 
     @Before
     fun setUp() {
-        mRateMovie = RateMovie(mockRepository, mockSubThread, mockSubThread)
+        mRateMovie = RateMovie(mockRepository, mockSubThread)
     }
 
     @Test

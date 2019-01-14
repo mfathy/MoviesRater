@@ -15,7 +15,7 @@ android {
         applicationId "me.mfathy.movies.rater"
         minSdkVersion globalConfiguration["androidMinSdkVersion"]
         targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "me.mfathy.movies.rater.test.TestRunner"
     }
     buildTypes {
         release {

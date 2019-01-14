@@ -13,7 +13,6 @@ import me.mfathy.movies.rater.domain.executor.ExecutionThread
  * This observable support backpressure.
  */
 abstract class FlowableUseCase<T> constructor(
-    private val subscriberThread: ExecutionThread,
     private val postExecutionThread: ExecutionThread
 ) {
 
@@ -21,11 +20,11 @@ abstract class FlowableUseCase<T> constructor(
 
     protected abstract fun buildUseCaseObservable(): Flowable<T>
 
-    open fun execute(singleObserver: DisposableSubscriber<T>) {
+    open fun execute(observer: DisposableSubscriber<T>) {
         val single = this.buildUseCaseObservable()
-            .subscribeOn(subscriberThread.scheduler)
-            .observeOn(postExecutionThread.scheduler)
-        addDisposable(single.subscribeWith(singleObserver))
+            .subscribeOn(postExecutionThread.subscribeScheduler)
+            .observeOn(postExecutionThread.observeScheduler)
+        addDisposable(single.subscribeWith(observer))
     }
 
     private fun addDisposable(disposable: Disposable) {

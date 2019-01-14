@@ -13,9 +13,8 @@ import javax.inject.Inject
  */
 open class GetMovies @Inject constructor(
     private val dataRepository: MoviesRepository,
-    subscriberThread: ExecutionThread,
     postExecutionThread: ExecutionThread
-) : FlowableUseCase<MutableList<Movie>>(subscriberThread, postExecutionThread) {
+) : FlowableUseCase<MutableList<Movie>>(postExecutionThread) {
 
     public override fun buildUseCaseObservable(): Flowable<MutableList<Movie>> {
         return dataRepository.getMovies()

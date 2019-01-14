@@ -15,18 +15,18 @@ import javax.inject.Inject
  */
 open class RateMovie @Inject constructor(
     private val dataRepository: MoviesRepository,
-    subscriberThread: ExecutionThread,
     postExecutionThread: ExecutionThread
-) : CompletableUseCase<RateMovie.Params>(subscriberThread, postExecutionThread) {
+) : CompletableUseCase<RateMovie.Params>(postExecutionThread) {
     public override fun buildUseCaseCompletable(params: Params?): Completable {
         if (params == null) throw IllegalArgumentException("Params can't be null!")
         return dataRepository.rateMovie(movie = params.movie)
     }
 
 
-    class Params constructor(val movie: Movie) {
+    class Params(val movie: Movie, val random: Boolean, val delay: Long) {
         companion object {
-            fun forRateMovie(movie: Movie): Params = Params(movie)
+            fun forRateMovie(movie: Movie, isRandom: Boolean = false, delay: Long = 0): Params =
+                Params(movie, isRandom, delay)
         }
     }
 }

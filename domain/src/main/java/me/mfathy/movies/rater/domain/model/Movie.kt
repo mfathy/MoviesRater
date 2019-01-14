@@ -6,4 +6,10 @@ data class Movie(
     val coverUrl: String = "",
     val description: String = "",
     var rating: Double = 0.0
-)
+) : Comparable<Movie> {
+    override fun compareTo(other: Movie): Int {
+        return rating.compareTo(other.rating)
+    }
+
+
+}

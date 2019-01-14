@@ -6,5 +6,6 @@ import io.reactivex.Scheduler
  * Scheduler thread contract.
  */
 interface ExecutionThread {
-    val scheduler: Scheduler
+    val subscribeScheduler: Scheduler
+    val observeScheduler: Scheduler
 }

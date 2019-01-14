@@ -29,7 +29,7 @@ class GetMoviesTest {
 
     @Before
     fun setUp() {
-        mGetMovies = GetMovies(mockRepository, mockSubThread, mockSubThread)
+        mGetMovies = GetMovies(mockRepository, mockSubThread)
     }
 
     @Test
