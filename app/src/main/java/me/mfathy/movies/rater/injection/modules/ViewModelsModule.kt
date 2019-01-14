@@ -6,8 +6,8 @@ import dagger.Binds
 import dagger.MapKey
 import dagger.Module
 import dagger.multibindings.IntoMap
-import me.mfathy.movies.rater.MoviesViewModel
 import me.mfathy.movies.rater.injection.ViewModelFactory
+import me.mfathy.movies.rater.ui.movies.MoviesViewModel
 import kotlin.reflect.KClass
 
 /**
@@ -19,7 +19,7 @@ abstract class ViewModelsModule {
     @Binds
     @IntoMap
     @ViewModelKey(MoviesViewModel::class)
-    abstract fun bindSearchViewModel(viewModel: MoviesViewModel): ViewModel
+    abstract fun bindMoviesViewModel(viewModel: MoviesViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
