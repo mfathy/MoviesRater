@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Movies Rater</string>
+    <string name="random_rating">Random Rating</string>
+    <string name="give_this_movie_a_new_rating">Give this movie a new rating.</string>
+    <string name="new_rating">New Rating</string>
+    <string name="rate">Rate</string>
+    <string name="stop_random_rating">Stop random rating</string>
 </resources>
